@@ -19,14 +19,17 @@ results = StudentsGrades([85, 42, 91, 67, 50, 73, 100, 38, 58])
 
 
 def main():
-    results = StudentsGrades([85, 42, 91, 67, 50, 73, 100, 38, 58])
+    vysled = StudentsGrades([85, 42, 91, 67, 50, 73, 100, 38, 58])
     print("Počet studentů: ", results.count())
-    for a in range(results.count()):
-        body = results.get_by_index(a)
-        znamka = results.get_grade(a)
+    for a in range(vysled.count()):
+        body = vysled.get_by_index(a)
+        znamka = vysled.get_grade(a)
         print(f"Student {a}: {body} points - {znamka}")
-    print("Studenti se 100 body: ", results.find(100))
-    print("Seřazené výsledky: ", results.get_sorted())
+    print("Studenti se 100 body: ", vysled.find(100))
+    print("Seřazené výsledky: ", vysled.get_sorted())
 
 if __name__ == "__main__":
     main()
+
+
+
