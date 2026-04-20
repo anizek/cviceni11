@@ -1,4 +1,4 @@
-
+from sorting import bubble_sort
 
 class StudentsGrades:
     def __init__(self, scores):
@@ -27,11 +27,14 @@ class StudentsGrades:
 
     def find(self, hledana_hodnota):
         vysledek = []
-        for i in range(len(self.scores)):
-            if self.scores[i] == hledana_hodnota:
-                vysledek.append(i)
+        for a in range(len(self.scores)):
+            if self.scores[a] == hledana_hodnota:
+                vysledek.append(a)
         return vysledek
 
-
+    def get_sorted(self):
+        scores = self.scores[:]
+        score = bubble_sort(scores)
+        return score
 
 

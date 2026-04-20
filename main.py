@@ -8,9 +8,6 @@ def random_numbers(count, low=0, high=100):
 
 
 numbers = [5, 4, 9, 1, 6]
-print(f"Původní seznam: ", numbers)
-print(f"Seřazený seznam: ", selection_sort(numbers))
-print(f"Bubble sort: ", bubble_sort(numbers))
 
 
 
@@ -19,14 +16,17 @@ print(f"Bubble sort: ", bubble_sort(numbers))
 
 results = StudentsGrades([85, 42, 91, 67, 50, 73, 100, 38, 58])
 
-print(results.count())          # 9
-print(results.get_by_index(2))  # 91
-print(results.scores)
-print(results.get_grade(2))  # A (91 bodů)
-print(results.get_grade(6))  # A (100 bodů)
-print(results.get_grade(7))  # F (38 bodů)
 
-print(results.find(100))  # [6]
-print(results.find(50))   # [4]
-print(results.find(77))   # []
 
+def main():
+    results = StudentsGrades([85, 42, 91, 67, 50, 73, 100, 38, 58])
+    print("Počet studentů: ", results.count())
+    for a in range(results.count()):
+        body = results.get_by_index(a)
+        znamka = results.get_grade(a)
+        print(f"Student {a}: {body} points - {znamka}")
+    print("Studenti se 100 body: ", results.find(100))
+    print("Seřazené výsledky: ", results.get_sorted())
+
+if __name__ == "__main__":
+    main()
